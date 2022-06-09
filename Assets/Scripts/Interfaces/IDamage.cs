@@ -2,6 +2,10 @@ namespace Asteroids
 {
     public interface IDamage
     {
-        void GetDamage(); 
+        int HP { get; set; } 
+
+        void GetDamage();
+
+        void AddHealth();
     }
 }

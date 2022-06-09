@@ -8,12 +8,12 @@ namespace Asteroids
     {
         [SerializeField] private float _speed;
         [SerializeField] private float _acceleration;
-        [SerializeField] private float _hp;
+        [SerializeField] private float _currentHealth;
         [SerializeField] private Rigidbody2D _bullet;
         [SerializeField] private Transform _barrel;
         [SerializeField] private float _force;
         [SerializeField] private GameObject _player;
-        [SerializeField] private Button _restartButton;
+        [SerializeField] private Button _restartButton; 
         //private ViewBonus _viewBonus;
         //private ViewEndGame _viewEndGame;
         private Reference _reference;
@@ -48,13 +48,13 @@ namespace Asteroids
 
         //private void GameOverEnd()
         //{
-        //    if (_hp <= 0)
+        //    if (_currentHealth <= 0)
         //    {
         //        _viewEndGame.GameOver(_hpText.text);
         //        _restartButton.gameObject.SetActive(true);
         //        Time.timeScale = 0f;
 
-        //    }
+        //    } 
         //}  
-    }   
+    }
 }
