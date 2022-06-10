@@ -14,16 +14,16 @@ namespace Asteroids
         [SerializeField] private float _force;
         [SerializeField] private GameObject _player;
         [SerializeField] private Button _restartButton; 
-        //private ViewBonus _viewBonus;
-        //private ViewEndGame _viewEndGame;
+        
         private Reference _reference;
         private Text _hpText; 
         private InputController _inputController;
         private Camera _camera;
         private Ship _ship;
+        private RotationShip _rotationShip;  
 
         private IMove _playerMove; 
-        //private PlayerMove _playerMove; ???
+        //почему не private PlayerMove _playerMove; ???
 
         public void Start()
         {
@@ -32,8 +32,19 @@ namespace Asteroids
             _camera = Camera.main;
             var moveTransform = new AccelerationMove(transform, _speed,
             _acceleration);
-            var rotation = new RotationShip(Vector3 direction);  //как исправить? 
-            _ship = new Ship(moveTransform, rotation); 
+            var _rotationShip = new RotationShip(Vector3 direction);  //как исправить? 
+            _ship = new Ship(moveTransform, rotation);
+
+            EnemyManager.CreateAsteroidEnemy(new Health(100.0f, 100.0f));
+            IEnemyFactory factory = new AsteroidsFactory();
+            factory.Create(new Health(100.0f, 100.0f));
+            EnemyManager.Factory = factory;
+            EnemyManager.Factory.Create(new Health(100.0f, 100.0f));
+             
+            EnemyPool enemyPool = new EnemyPool(5);
+            var enemy = enemyPool.GetEnemy("tie");
+            enemy.transform.position = Vector3.one;
+            enemy.gameObject.SetActive(true);
         }
 
         private void Update()  

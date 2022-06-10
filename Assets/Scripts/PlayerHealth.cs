@@ -3,9 +3,9 @@ using UnityEngine;
 namespace Asteroids
 {
     internal sealed class PlayerHealth : IDamage
-    {       
-        private float _maxHealth { get; }
-        private float _currentHealth {get; set;}  
+    {
+        public Health hp;
+        
 
         private GameObject _player;
         private readonly ProviderPlayer _providerPlayer;
@@ -24,7 +24,7 @@ namespace Asteroids
         //    }
         //}
 
-        public PlayerHealth(float CurrentHealth, GameObject player)
+        public PlayerHealth(int CurrentHealth, GameObject player)
         {
             _currentHealth = CurrentHealth;
             _player = player; 
@@ -33,15 +33,15 @@ namespace Asteroids
 
         public void GetDamage()
         {
-            _currentHealth--;          
+            hp--;          
         }
 
-        public void AddHealth()
+        public void AddHealth() 
         {
-            _currentHealth++; 
+            hp++; 
         }
 
-        public Controller(ProviderPlayer providerPlayer) 
+        public GameController(ProviderPlayer providerPlayer) 
         {
             _providerPlayer = providerPlayer;
             _providerPlayer.OnCollisionEnterChange += ProviderOnOnCollisionEnterChange;
@@ -52,7 +52,7 @@ namespace Asteroids
             Debug.Log(obj); 
         }
 
-        ~Controller() 
+        Controller() 
         {
             _providerPlayer.OnCollisionEnterChange -= ProviderOnOnCollisionEnterChange;
         }
