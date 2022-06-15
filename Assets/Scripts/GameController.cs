@@ -20,7 +20,9 @@ namespace Asteroids
         private InputController _inputController;
         private Camera _camera;
         private Ship _ship;
-        private RotationShip _rotationShip;  
+        private RotationShip _rotationShip;
+
+        // PlayerHealth проинициализировать
 
         private IMove _playerMove; 
         //почему не private PlayerMove _playerMove; ???
@@ -32,14 +34,15 @@ namespace Asteroids
             _camera = Camera.main;
             var moveTransform = new AccelerationMove(transform, _speed,
             _acceleration);
-            var _rotationShip = new RotationShip(Vector3 direction);  //как исправить? 
+            var rotation = new RotationShip();  
             _ship = new Ship(moveTransform, rotation);
+            rotation.Rotation(Vector3.forward); // в методичке проверить
 
-            EnemyManager.CreateAsteroidEnemy(new Health(100.0f, 100.0f));
+            EnemyManager.CreateAsteroidEnemy(100.0f);
             IEnemyFactory factory = new AsteroidsFactory();
-            factory.Create(new Health(100.0f, 100.0f));
+            factory.Create(100.0f); 
             EnemyManager.Factory = factory;
-            EnemyManager.Factory.Create(new Health(100.0f, 100.0f));
+            EnemyManager.Factory.Create(100.0f);
              
             EnemyPool enemyPool = new EnemyPool(5);
             var enemy = enemyPool.GetEnemy("tie");

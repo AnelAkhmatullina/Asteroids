@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Asteroids
 {
-    internal sealed class Asteroid : EnemyManager
+    public sealed class Asteroid : EnemyManager
     {
         
     }

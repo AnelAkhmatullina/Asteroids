@@ -21,8 +21,8 @@ namespace Asteroids
         {
             if (Input.GetButtonDown("Fire1")) 
             {
-                var temAmmunition = Instantiate(_bullet, _barrel.position, _barrel.rotation);
-                temAmmunition.AddForce(_barrel.up * _force);
+                var temAmmunition = Object.Instantiate(_bullet, _barrel.position, _barrel.rotation);
+                temAmmunition.AddForce(_barrel.up * _force); 
             }
         } 
     }

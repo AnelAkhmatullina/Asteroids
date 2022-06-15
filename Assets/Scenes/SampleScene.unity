@@ -364,6 +364,7 @@ GameObject:
   - component: {fileID: 970033830}
   - component: {fileID: 970033829}
   - component: {fileID: 970033831}
+  - component: {fileID: 970033832}
   m_Layer: 0
   m_Name: Ship
   m_TagString: Untagged
@@ -461,6 +462,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &970033832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 970033828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33475e7b4e2384de98a3ffdec2315380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1455086332
 GameObject:
   m_ObjectHideFlags: 0
@@ -470,6 +483,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1455086333}
+  - component: {fileID: 1455086334}
   m_Layer: 0
   m_Name: GameStart
   m_TagString: Untagged
@@ -492,3 +506,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1455086334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455086332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 705c76b980b01488aa5fece76808ecd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 0
+  _acceleration: 0
+  _currentHealth: 0
+  _bullet: {fileID: 0}
+  _barrel: {fileID: 0}
+  _force: 0
+  _player: {fileID: 0}
+  _restartButton: {fileID: 0}

@@ -3,17 +3,17 @@ using UnityEngine;
 
 namespace Asteroids
 {
-    internal abstract class EnemyManager : MonoBehaviour
+    public abstract class EnemyManager : MonoBehaviour 
     {
         public static IEnemyFactory Factory;
         public Transform _rotPool; 
-        public Health _health;
+        public float _health;
 
-        public Health Health
+        public float Health
         {
             get
             {
-                if(_health.CurrentHealth <= 0.0f)
+                if(_health <= 0.0f)
                 {
                     ReturnToPool();
                 }
@@ -36,14 +36,14 @@ namespace Asteroids
         } 
 
 
-        public static Asteroid CreateAsteroidEnemy(Health hp)
+        public static Asteroid CreateAsteroidEnemy(float hp)
         {
             var enemy = Instantiate(Resources.Load<Asteroid>("Sprites/Asteroid"));
             enemy.Health = hp;
             return enemy;
         }
 
-        public void DependencyInjectHealth(Health hp)
+        public void DependencyInjectHealth(float hp)
         {
             Health = hp;
         }
