@@ -62,7 +62,7 @@ namespace Asteroids
         {
             get
             {
-                if (!_mainCamera) // можно не расписывать и указывать без приравнивания к null 
+                if (!_mainCamera) 
                 {
                     _mainCamera = Camera.main;
                 }

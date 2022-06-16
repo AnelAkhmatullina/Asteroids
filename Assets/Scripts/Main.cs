@@ -2,12 +2,18 @@ using UnityEngine;
 
 namespace Asteroids
 {
-    public class Main : MonoBehaviour
+    public sealed class Main : MonoBehaviour
     {
+        private GameController _gameController;
+
         private void Start()
+        {        
+            _gameController = gameObject.AddComponent<GameController>();  
+        }
+
+        private void Update()
         {
-            var Player = new Main();
-            Player.Start();
+            _gameController.Update();   
         }
     } 
 }

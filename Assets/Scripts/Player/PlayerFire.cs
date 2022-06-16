@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Asteroids
 {
-    internal sealed class PlayerFire
+    internal sealed class PlayerFire: IFire
     {
         private readonly Rigidbody2D _bullet; // пуля
         private readonly Transform _barrel; // ствол
@@ -14,16 +14,14 @@ namespace Asteroids
         {
             _bullet = bullet;
             _barrel = barrel; 
-            _force = force; 
+            _force = force;  
         }
 
         public void Fire()
         {
-            if (Input.GetButtonDown("Fire1")) 
-            {
-                var temAmmunition = Object.Instantiate(_bullet, _barrel.position, _barrel.rotation);
-                temAmmunition.AddForce(_barrel.up * _force); 
-            }
-        } 
+            var temAmmunition = Object.Instantiate(_bullet, _barrel.position, _barrel.rotation);
+            temAmmunition.AddForce(_barrel.up * _force);
+        }
+
     }
 }

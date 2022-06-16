@@ -515,14 +515,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1455086332}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 705c76b980b01488aa5fece76808ecd5, type: 3}
+  m_Script: {fileID: 11500000, guid: 41a1be2d37bc64c2a888550273e76c4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 0
-  _acceleration: 0
-  _currentHealth: 0
-  _bullet: {fileID: 0}
-  _barrel: {fileID: 0}
-  _force: 0
-  _player: {fileID: 0}
-  _restartButton: {fileID: 0}

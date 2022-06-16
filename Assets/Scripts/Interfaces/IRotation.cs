@@ -1,4 +1,5 @@
 using UnityEngine;
+
 namespace Asteroids
 {
     public interface IRotation

@@ -38,9 +38,9 @@ namespace Asteroids
 
         public static Asteroid CreateAsteroidEnemy(float hp)
         {
-            var enemy = Instantiate(Resources.Load<Asteroid>("Sprites/Asteroid"));
+            var enemy = Instantiate(Resources.Load<Asteroid>("Sprites/Asteroid.PNG"));  
             enemy.Health = hp;
-            return enemy;
+            return enemy;  
         }
 
         public void DependencyInjectHealth(float hp)
