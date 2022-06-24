@@ -10,9 +10,24 @@ namespace Asteroids
         private GameObject _hpLabel;
         private GameObject _endGameLabel;
         private GameObject _restartButton;
+        private GameObject _prefabBullet; 
         private Canvas _canvas;
-        private Camera _mainCamera; 
+        private Camera _mainCamera;
 
+        public GameObject PrefabBullet
+        {
+            get
+            {
+                if (_prefabBullet == null) 
+                {
+                    GameObject PrefabBullet = Resources.Load<GameObject>("BulletRed");
+                    _prefabBullet = Object.Instantiate(PrefabBullet);  
+                }
+                return _prefabBullet;
+            }
+
+            set => _prefabBullet = value;
+        }
 
         public GameObject EndGameLabel
         {

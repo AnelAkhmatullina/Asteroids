@@ -8,8 +8,6 @@ namespace Asteroids
         private readonly Camera _camera;
         private readonly Transform _transform;
 
-        private float horizontal;
-        private float vertical;
         private PlayerMove _playerMove;
         private IRotation _rotation;
 
@@ -17,21 +15,20 @@ namespace Asteroids
         {
             _ship = ship;
             _camera = camera;
-            _transform = transform; 
+            _transform = transform;
+            
         }
 
         public void Update()
         {
-            horizontal = Input.GetAxis("Horizontal");
-            vertical = Input.GetAxis("Vertical");
-            //rotation = new RotationShip(transform); Чем заменить? 
-
             var direction = Input.mousePosition - _camera.WorldToScreenPoint(_transform.position);
-            _ship.Rotation(direction); // это в методичке было в классе Player
+            _ship.Rotation(direction);
 
-            _ship.Move(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), Time.deltaTime);  
+            _ship.Move(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), Time.deltaTime);
 
-            if (Input.GetKeyDown(KeyCode.LeftShift))
+            
+
+            if (Input.GetKeyDown(KeyCode.LeftShift)) 
             {
                 _ship.AddAcceleration();
             }

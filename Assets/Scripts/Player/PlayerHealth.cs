@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace Asteroids
 {
     internal sealed class PlayerHealth : IDamage
@@ -17,12 +19,20 @@ namespace Asteroids
 
         public void GetDamage()
         {
-            _hp--;          
+            _hp--;
+            if (_hp < 0)
+            {
+                _player.gameObject.SetActive(false); 
+            }
+
+            Debug.Log($"Game Over"); 
         }
 
         public void AddHealth() 
         {
-            _hp++;  
+            _hp++;
+
+            Debug.Log($"HP +");
         }
          
     }

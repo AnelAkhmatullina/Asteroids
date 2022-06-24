@@ -6,12 +6,11 @@ namespace Asteroids
     {
         public EnemyManager Create(float hp)
         {
-            var enemy =
-            Object.Instantiate(Resources.Load<Asteroid>("Sprites/AsteroidFromFactory")); 
-            enemy.DependencyInjectHealth(hp); 
-            return enemy; 
+            var enemyFactory = Object.Instantiate(Resources.Load<Asteroid>("Enemies/AsteroidsFactory")); 
+            enemyFactory.DependencyInjectHealth(hp); 
+            return enemyFactory;     
         }
     }
-}
+}   
 
 

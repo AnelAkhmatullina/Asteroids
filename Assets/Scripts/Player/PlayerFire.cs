@@ -10,7 +10,7 @@ namespace Asteroids
         private readonly Transform _barrel; // ствол
         private readonly float _force; // сила оружия
 
-        public PlayerFire(Rigidbody2D bullet, Transform barrel, float force) //почему это название и название класса должны совпадать? 
+        public PlayerFire(Rigidbody2D bullet, Transform barrel, float force) 
         {
             _bullet = bullet;
             _barrel = barrel; 
