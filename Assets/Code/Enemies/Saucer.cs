@@ -2,7 +2,7 @@ namespace Asteroids
 {
     public sealed class Saucer : EnemyManager, IDamage
     {
-        private float _hp;
+        //private float _hp;
         private EnemyView _enemy;
         public float Hp => _hp;
 
