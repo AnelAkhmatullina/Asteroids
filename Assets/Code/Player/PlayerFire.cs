@@ -6,20 +6,33 @@ namespace Asteroids
 {
     internal sealed class PlayerFire: IFire
     {
-        private readonly Rigidbody2D _bullet; // пуля
-        private readonly Transform _barrel; // ствол
+        private readonly Rigidbody2D _bulletGreen; // пуля
+        [SerializeField] private Sprite _sprite; 
+        private readonly Transform _barrel; // ствол 
         private readonly float _force; // сила оружия
-
-        public PlayerFire(Rigidbody2D bullet, Transform barrel, float force) 
+        
+        public void CreateBullet()
         {
-            _bullet = bullet;
-            _barrel = barrel; 
-            _force = force;  
+            var gameObjectBuilder = new GameObjectBuilder();
+            GameObject _bulletGreen = gameObjectBuilder.
+                Visual.
+                Name("Bullet Green"). 
+                Sprite(_sprite).
+                Physics.
+                BoxCollider2D(); 
         }
 
-        public void Fire()
+        public PlayerFire(Rigidbody2D bulletGreen, Transform barrel, float force)
         {
-            var temAmmunition = Object.Instantiate(_bullet, _barrel.position, _barrel.rotation);
+            _bulletGreen = bulletGreen;
+            _barrel = barrel;
+            _force = force;
+        }  
+
+        public void Fire()   
+        {
+            
+            var temAmmunition = Object.Instantiate(_bulletGreen, _barrel.position, _barrel.rotation);
             temAmmunition.AddForce(_barrel.up * _force);
         }
 

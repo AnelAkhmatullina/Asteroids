@@ -66,15 +66,15 @@ namespace Asteroids
             SceneManager.LoadScene(0);  
         }
 
-        private void GameOverEnd()
-        {
-            if (_hp <= 0)
-            {
-                _viewEndGame.GameOver(_hpText.text);
-                _restartButton.gameObject.SetActive(true);
-                Time.timeScale = 0f;
+        //private void GameOverEnd()
+        //{
+        //    if (_hp <= 0)
+        //    {
+        //        _viewEndGame.GameOver(_hpText.text);
+        //        _restartButton.gameObject.SetActive(true);
+        //        Time.timeScale = 0f;
 
-            }
-        }
+        //    }
+        //}
     }
 }
